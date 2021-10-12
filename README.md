@@ -2,7 +2,7 @@
 ioBroker deployment using Docker Compose
 
 # Networking:
-For almost every usecase it is usefull to provide ioBroker direct access to your LAN
+For most usecases it is usefull to provide ioBroker direct access to your LAN
 To allow the ioBroker-container to obtain a IP address in your LAN you have to provide
 
 Gateway ip address with env "GATEWAY_IP" (default: 192.168.1.1)
@@ -17,6 +17,8 @@ This Compose file uses Mariadb as a drop-in-replacement for My-sql as database-c
 If You want to use some other Database like Influx, feel free to customize the compose file to your needs.
 
 You can provide a password to your Database with env "DB_PASSWORD"
+
+# Access Database inside ioBroker: 
 
 inside iobroker you cann access Mariadb with the SQL adapter as MY-SQL
 
