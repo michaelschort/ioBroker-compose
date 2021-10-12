@@ -17,9 +17,14 @@ If You want to use some other Database like Influx, feel free to customize the c
 You can provide a password to your Database with env "DB_PASSWORD"
 
 inside iobroker you cann access Mariadb with the SQL adapter as MY-SQL
+
 Host:     mariadb
+
 Port:     3306
+
 Database: iobroker
+
 User:     iobroker
+
 Password: your DB_PASSWORD if set, 'mysqlpassword' if unset
 
