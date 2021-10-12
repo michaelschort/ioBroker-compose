@@ -15,7 +15,8 @@ To allow the ioBroker-container to obtain a IP address in your LAN you have to p
 
 - Gateway ip address with env "GATEWAY_IP" (default: 192.168.1.1)
 - Subnet mask with env "SUBNET_MASK" (dafault: 24)
-- the ioBroker IP-address with env "IP_ADDRESS" (default: 192.168.1.2)
+- the ioBroker IP-address with env "IP_ADDRESS" (default: 192.168.1.2)  
+*make sure the provides ip address is outside your DHCP range*
 - optional the ioBroker Mac address mith env "MAC_ADDRESS"
 
 it is usefull to provide a Mac-address when using YAHKA adapter.
