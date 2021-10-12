@@ -26,5 +26,5 @@ inside iobroker you cann access Mariadb with the SQL adapter as MY-SQL
 - Port:     3306
 - Database: iobroker
 - User:     iobroker
-- Password: your DB_PASSWORD if set, 'mysqlpassword' if unset
+- Password: your DB_PASSWORD if set / 'mysqlpassword' if unset
 
