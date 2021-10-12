@@ -5,7 +5,7 @@ ioBroker deployment using Docker Compose
 This compose-file is tailored and tested to be used on linux hosts using eth0 as network interface (especially Raspberry Pi) 
 It can be adjusted for use on mac-os or windows hosts. 
 
-I recommend using [ubuntu server for Raspberry Pi] (https://ubuntu.com/download/raspberry-pi) as OS, with latest Docker version and [Portainer-Ce](https://hub.docker.com/r/portainer/portainer-ce) for easy Container management. 
+I recommend using [ubuntu server for Raspberry Pi](https://ubuntu.com/download/raspberry-pi) as OS, with latest Docker version and [Portainer-Ce](https://hub.docker.com/r/portainer/portainer-ce) for easy Container management. 
 
 ## Networking:
 For most usecases it is usefull to provide ioBroker direct access to your LAN  
