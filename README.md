@@ -6,7 +6,9 @@ For almost every usecase it is usefull to provide ioBroker direct access to your
 To allow the ioBroker-container to obtain a IP address in your LAN you have to provide
 
 Gateway ip address with env "GATEWAY_IP" (default: 192.168.1.1)
+
 Subnet mask with env "SUBNET_MASK" (dafault: 24)
+
 the ioBroker IP-address with env "IP_ADDRESS" (default: 192.168.1.2)
 
 # Database:
