@@ -14,7 +14,7 @@ it is usefull to provide a Mac-address when using YAHKA adapter.
 
 ## Database:
 
-This Compose file uses Mariadb as a drop-in-replacement for My-sql as database-container.  
+This Compose file uses Mariadb as a open-source drop-in-replacement for My-sql as database-container.  
 If You want to use some other Database like Influx, feel free to customize the compose file to your needs.
 
 *optional*  You can provide a password to your Database with env "DB_PASSWORD"
