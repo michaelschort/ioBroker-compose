@@ -7,6 +7,8 @@ It can be adjusted for use on mac-os or windows hosts.
 
 I recommend using [ubuntu server for Raspberry Pi](https://ubuntu.com/download/raspberry-pi) as OS, with latest Docker version and [Portainer-Ce](https://hub.docker.com/r/portainer/portainer-ce) for easy Container management. 
 
+If you are using a Raspberry-Pi 3 or 4 with just 1Gig of ram, make sure to configure your swapfile correctly.  *(2Gig of swap with swappiness of 10 have worked just fine with my setup)*
+
 ## Networking:
 For most usecases it is usefull to provide ioBroker direct access to your LAN  
 To allow the ioBroker-container to obtain a IP address in your LAN you have to provide
