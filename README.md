@@ -1,6 +1,10 @@
 # ioBroker-compose
 ioBroker deployment using Docker Compose
 
+### beware
+This compose-file is tailored to be used on linux hosts using eth0 as network interface (especially Raspberry Pi) 
+It can be adjusted for use on mac-os or windows hosts. 
+
 ## Networking:
 For most usecases it is usefull to provide ioBroker direct access to your LAN  
 To allow the ioBroker-container to obtain a IP address in your LAN you have to provide
