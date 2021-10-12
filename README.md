@@ -2,7 +2,7 @@
 ioBroker deployment using Docker Compose
 
 ## Networking:
-For most usecases it is usefull to provide ioBroker direct access to your LAN
+For most usecases it is usefull to provide ioBroker direct access to your LAN  
 To allow the ioBroker-container to obtain a IP address in your LAN you have to provide
 
 - Gateway ip address with env "GATEWAY_IP" (default: 192.168.1.1)
@@ -14,10 +14,10 @@ it is usefull to provide a Mac-address when using YAHKA adapter.
 
 ## Database:
 
-This Compose file uses Mariadb as a drop-in-replacement for My-sql as database-container.
+This Compose file uses Mariadb as a drop-in-replacement for My-sql as database-container.  
 If You want to use some other Database like Influx, feel free to customize the compose file to your needs.
 
-You can provide a password to your Database with env "DB_PASSWORD"
+*optional*  You can provide a password to your Database with env "DB_PASSWORD"
 
 ### Access Database inside ioBroker: 
 
