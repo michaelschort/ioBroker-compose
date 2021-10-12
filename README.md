@@ -11,6 +11,10 @@ Subnet mask with env "SUBNET_MASK" (dafault: 24)
 
 the ioBroker IP-address with env "IP_ADDRESS" (default: 192.168.1.2)
 
+optional the ioBroker Mac address mith env "MAC_ADDRESS"
+
+it is usefull to provide a Mac-address when using YAHKA adapter.
+
 # Database:
 
 This Compose file uses Mariadb as a drop-in-replacement for My-sql as database-container.
