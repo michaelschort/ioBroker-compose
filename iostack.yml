@@ -1,0 +1,76 @@
+version: '3.0'
+services:
+    cache:
+        image: redis:latest
+        hostname: redis
+        volumes:
+            - redis-peristence:/data
+        labels:
+            - autoheal:"true"
+        networks:
+            - backend
+        restart: always
+    iobroker:
+        image: buanet/iobroker:latest
+        hostname: iobroker
+        domainname: ${DOMAIN_NAME:-local}
+        depends_on:
+            - cache
+        volumes:
+            - iobroker-data:/opt/iobroker
+        environment:
+            IOB_STATESDB_HOST: cache
+            IOB_STATESDB_PORT: 6379
+            IOB_STATESDB_TYPE: redis
+            AVAHI: "true"
+            LANGUAGE: de_DE:de
+            LANG: de_DE.UTF-8
+            LC_ALL: de_DE
+            TZ: Europe/Berlin
+            SETUID: 1000
+            SETGID: 1000
+        labels:
+            - autoheal:"true"
+        mac_address: ${MAC_ADDRESS:-1a:2b:3c:4d:5e:6f}
+        networks:
+            backend:
+            frontend:
+                ipv4_address: ${IP_ADDRESS:-192.168.1.2}
+        restart: always
+    mariadb:
+        image: mariadb:latest
+        hostname: mariadb
+        volumes:
+            - mariadb-data:/var/lib/mysql
+            - mariadb-conf:/etc/mysql
+        environment:
+            MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+            MYSQL_DATABASE: iobroker
+            MYSQL_USER: iobroker
+            MYSQL_PASSWORD: ${DB_PASSWORD:-mysqlpassword}
+        labels:
+            - autoheal:"true"
+        networks:
+            - backend
+        restart: always
+    healthcheck:
+        container_name: healthcheck
+        image: willfarrell/autoheal
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        restart: always      
+volumes:
+    redis-peristence:
+    iobroker-data:
+    mariadb-data:
+    mariadb-conf:
+networks:
+    backend:
+        driver: bridge
+    frontend:
+        driver: macvlan
+        driver_opts:
+            parent: eth0
+        ipam:
+            config:
+                - subnet: ${GATEWAY_IP:-192.168.1.1}/${SUBNET_MASK:-24}
